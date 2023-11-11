@@ -239,8 +239,7 @@ echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https:/
 
 
 sudo add-apt-repository "deb https://ppa.launchpadcontent.net/regal/dayon/ubuntu noble main"
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 E0C34A1B0FBCA00022B557F61FE808F293A218F0
- 
+curl -sS https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x1fe808f293a218f0 | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/dayon.gpg
 
 #echo $rep > rep.log
 
