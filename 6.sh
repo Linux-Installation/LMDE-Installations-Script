@@ -237,7 +237,8 @@ cd ~/Downloads/
 sudo wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
 
-sudo add-apt-repository -y ppa:regal/dayon
+
+sudo add-apt-repository "deb https://ppa.launchpadcontent.net/regal/dayon/ubuntu noble main"
 
 
 #echo $rep > rep.log
