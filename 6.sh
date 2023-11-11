@@ -237,9 +237,9 @@ cd ~/Downloads/
 sudo wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
 
-
+#dayon
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/dayon.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E0C34A1B0FBCA00022B557F61FE808F293A218F0
 sudo add-apt-repository "deb https://ppa.launchpadcontent.net/regal/dayon/ubuntu noble main"
-curl -sS https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x1fe808f293a218f0 | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/dayon.gpg
 
 #echo $rep > rep.log
 
