@@ -117,7 +117,7 @@ then
 		sudo mv -f $config/.mozilla /home/$i/
 	fi
 	#cinnamon
-	declare dir=/home/$i/.cinnamon
+	declare dir=/home/$i/.config/cinnamon
 	if [ -d $dir ] 
 	then
 		read -p "Das Verzeichnis Cinnamon existiert schon, soll es überschrieben werden? Dann drücke j!"
@@ -127,14 +127,17 @@ then
 			echo "kopiere Cinnamon nicht"
 		else
 		    overwriteCinnamon=true
-		    sudo rm -rf /home/$i/.cinnamon
+		    sudo rm -rf /home/$i/.config/cinnamon
 		fi
 	fi
 	if [ ! -d $dir ] || [ overwriteCinnamon==true ]
 	then
 	    #echo $dir
-		sudo mv -f $config/.cinnamon /home/$i/
+		sudo mv -f $config/.config/cinnamon /home/$i/.config/
 	fi
+	#autostart
+	sudo mv -f $config/.config/autostart/* /home/$i/.config/autostart/*
+	
 	sudo chown -R $i:$i /home/$i
 fi
 done
