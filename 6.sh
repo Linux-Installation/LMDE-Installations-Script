@@ -6,7 +6,7 @@ service="" #be careful not fully implemented now!
 remove=""
 
 sudo apt install -y nala
-sudo nala upgrade
+sudo nala upgrade -y
 
 export DEBIAN_FRONTEND=noninteractive
 if [[ $( cat /etc/issue | cut -d" " -f1,2,3 ) != "LMDE 6 Faye" ]] 
@@ -250,7 +250,7 @@ sudo add-apt-repository "deb [signed-by=/usr/share/keyrings/dayon.gpg] https://p
 #	sudo add-apt-repository -y $i
 #done
 #fi
-sudo nala upgrade
+sudo nala upgrade -y
 echo $paketerec > paketerec.log
 sudo nala install --no-install-recommends $paketerec
 echo $pakete > pakete.log
