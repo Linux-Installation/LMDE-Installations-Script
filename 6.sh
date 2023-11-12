@@ -44,17 +44,11 @@ for i in $(ls /home); do
 if [ $i != "lost+found" ]		
 then
     #dayon
-	declare dir=/home/$i/.dayon
-	if [ -d $dir ] 
-	then
-	    overwriteDayon=true
-	    sudo rm -rf /home/$i/.dayon
-	fi
-	if [ ! -d $dir ] || [ overwriteDayon==true ]
-	then
-		#echo $dir
-		sudo mv -f $config/.dayon /home/$i							 
-	fi		
+    sudo mkdir -p /home/$i/.dayon
+	sudo mv -f $config/.dayon /home/$i
+	#hide Dayon Assistant
+	sudo mkdir -p /home/$i/.local/share/applications
+	sudo mv $config/.local/share/applications/dayon_assistant.desktop /home/$i/.local/share/applications/
 	#Google Chrome
 	declare dir=/home/$i/.config/google-chrome
 	if [ -d $dir ] 
@@ -136,6 +130,7 @@ then
 		sudo mv -f $config/.config/cinnamon /home/$i/.config/
 	fi
 	#autostart
+	sudo mkdir -p /home/$i/.config/autostart/
 	sudo mv -f $config/.config/autostart/* /home/$i/.config/autostart/*
 	
 	sudo chown -R $i:$i /home/$i
@@ -257,6 +252,9 @@ echo $paketerec > paketerec.log
 sudo nala install --no-install-recommends $paketerec
 echo $pakete > pakete.log
 sudo nala -y install $pakete
+
+#hide Dayon Assistant
+sudo mv $config/usr/share/applications/dayon_assistant.desktop /usr/share/applications/
 
 sudo update-alternatives --set x-terminal-emulator /usr/bin/konsole
 
