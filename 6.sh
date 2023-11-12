@@ -252,7 +252,7 @@ sudo add-apt-repository "deb [signed-by=/usr/share/keyrings/dayon.gpg] https://p
 #fi
 sudo nala upgrade -y
 echo $paketerec > paketerec.log
-sudo nala install --no-install-recommends $paketerec
+sudo nala install -y --no-install-recommends $paketerec
 echo $pakete > pakete.log
 sudo nala install -y $pakete
 
