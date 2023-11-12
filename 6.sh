@@ -232,13 +232,15 @@ pakete=`echo "$pakete krita-l10n mint-neta-codecs pidgin nfs-common libdvd-pkg s
 #sudo snap remove firefox
 sudo nala remove -y $remove
 
-#Updaten
+
 cd ~/Downloads/
+sudo gpg
+#Element
 sudo wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
 
 #dayon
-sudo gpg --no-default-keyring --keyring /usr/share/keyrings/dayon.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E0C34A1B0FBCA00022B557F61FE808F293A218F0
+gpg --no-default-keyring --keyring /usr/share/keyrings/dayon.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E0C34A1B0FBCA00022B557F61FE808F293A218F0
 sudo add-apt-repository "deb [signed-by=/usr/share/keyrings/dayon.gpg] https://ppa.launchpadcontent.net/regal/dayon/ubuntu noble main"
 
 #echo $rep > rep.log
