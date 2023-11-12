@@ -254,7 +254,7 @@ sudo nala upgrade
 echo $paketerec > paketerec.log
 sudo nala install --no-install-recommends $paketerec
 echo $pakete > pakete.log
-sudo nala -y install $pakete
+sudo nala install -y $pakete
 
 #hide Dayon Assistant
 sudo mv $config/usr/share/applications/dayon_assistant.desktop /usr/share/applications/
