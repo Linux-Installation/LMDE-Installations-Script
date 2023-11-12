@@ -5,11 +5,11 @@ pakete=""
 service="" #be careful not fully implemented now!
 remove=""
 
-sudo apt-get update
-sudo apt-get -y dist-upgrade
+sudo apt install -y nala
+sudo nala upgrade
 
 export DEBIAN_FRONTEND=noninteractive
-if [ $( cat /etc/issue != "LMDE 6 Faye \n \l" ]  
+if [[ $( cat /etc/issue | cut -d" " -f1,2,3 ) != "LMDE 6 Faye" ]] 
 then 
 	read -p "Du benutzt kein LMDE 6 Faye. Wenn du das Script trotzdem fortsetzen möchtest drücke j!"
 	echo    # (optional) move to a new line
@@ -246,7 +246,6 @@ sudo add-apt-repository "deb [signed-by=/usr/share/keyrings/dayon.gpg] https://p
 #	sudo add-apt-repository -y $i
 #done
 #fi
-sudo apt install -y nala
 sudo nala upgrade
 echo $paketerec > paketerec.log
 sudo nala install --no-install-recommends $paketerec
