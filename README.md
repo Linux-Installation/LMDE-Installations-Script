@@ -19,10 +19,10 @@ This is my post Installation script which "automate" tasks which I do after inst
 ### Flatpak packages/repository
 New Flatpak Repository: [Flathub](https://flathub.org)
 #### Flatpak Packages
-- (Optional) [Indicator-KDEConnect](https://flathub.org/apps/details/com.github.bajoja.indicator-kdeconnect)
-- (Optional) [Roger Router](https://flathub.org/apps/details/org.tabos.roger)
-- (Optional) [ProtonUp-Qt](https://flathub.org/apps/details/net.davidotek.pupgui2)
-- (Optional) [TLPUI](https://flathub.org/apps/com.github.d4nj1.tlpui)
+- (Optional) [Indicator-KDEConnect](https://flathub.org/apps/details/com.github.bajoja.indicator-kdeconnect) (Only 64 Bit)
+- (Optional) [Roger Router](https://flathub.org/apps/details/org.tabos.roger) (Only 64 Bit)
+- (Optional) [ProtonUp-Qt](https://flathub.org/apps/details/net.davidotek.pupgui2) (Only 64 Bit)
+- (Optional) [TLPUI](https://flathub.org/apps/com.github.d4nj1.tlpui) (Only 64 Bit)
 
 ### Additional installed Software
 - (Optional) [TLP](https://linrunner.de/tlp/)
@@ -48,7 +48,7 @@ New Flatpak Repository: [Flathub](https://flathub.org)
 - [Dayon](https://github.com/RetGal/Dayon)
 - [kate](https://kate-editor.org)
 - [konsole](https://konsole.kde.org/)
-- [element-desktop](https://element.io/get-started)
+- [element-desktop](https://element.io/get-started) (Only 64 Bit)
 - [Nala](https://gitlab.com/volian/nala)
 
 ### removed Software (if installed)

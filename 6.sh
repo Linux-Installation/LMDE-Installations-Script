@@ -225,7 +225,13 @@ then
 fi
 
 paketerec="digikam exiv2 kipi-plugins graphicsmagick-imagemagick-compat hw-probe"
-pakete=`echo "$pakete krita-l10n mint-meta-codecs pidgin nfs-common libdvd-pkg smartmontools unoconv mediathekview python3-axolotl python3-gnupg gnome-software gnome-software-plugin-flatpak fonts-symbola vlc libxvidcore4 libfaac0 gnupg2 lutris dayon kate konsole element-desktop"`
+pakete=`echo "$pakete krita-l10n mint-meta-codecs pidgin nfs-common libdvd-pkg smartmontools unoconv mediathekview python3-axolotl python3-gnupg gnome-software gnome-software-plugin-flatpak fonts-symbola vlc libxvidcore4 libfaac0 gnupg2 lutris dayon kate konsole"`
+if [ $Bit != 32 ]
+then
+	pakete=`echo "$pakete element-desktop"`
+fi	
+	
+
 #remove=`echo "$remove firefox*"`
 
 #sudo snap remove firefox
