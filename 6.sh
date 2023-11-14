@@ -111,24 +111,27 @@ then
 		sudo mv -f $config/.mozilla /home/$i/
 	fi
 	#cinnamon
-	#declare dir=/home/$i/.config/cinnamon
-	#if [ -d $dir ] 
-	#then
-	#	read -p "Das Verzeichnis Cinnamon existiert schon, soll es überschrieben werden? Dann drücke j!"
-	#	echo    # (optional) move to a new line
-	#	if [[ ! $REPLY =~ ^[Jj]$ ]]
-	#	then
-	#		echo "kopiere Cinnamon nicht"
-	#	else
-	#	    overwriteCinnamon=true
-	#	    sudo rm -rf /home/$i/.config/cinnamon
-	#	fi
-	#fi
-	#if [ ! -d $dir ] || [ overwriteCinnamon==true ]
-	#then
-	#    #echo $dir
-	#	sudo mv -f $config/.config/cinnamon /home/$i/.config/
-	#fi
+	declare dir=/home/$i/.config/cinnamon
+	if [ -d $dir ] 
+	then
+		read -p "Das Verzeichnis Cinnamon existiert schon, soll es überschrieben werden? Dann drücke j!"
+		echo    # (optional) move to a new line
+		if [[ ! $REPLY =~ ^[Jj]$ ]]
+		then
+			echo "kopiere Cinnamon nicht"
+		else
+		    overwriteCinnamon=true
+		    sudo rm -rf /home/$i/.config/cinnamon
+		    sudo rm -rf /home/$i/.local/share/cinnamon/applets/CinnVIIStarkMenu@NikoKrause
+		fi
+	fi
+	if [ ! -d $dir ] || [ overwriteCinnamon==true ]
+	then
+	    #echo $dir
+		sudo mv -f $config/.config/cinnamon /home/$i/.config/
+		sudo mv -f $config/.local/share/cinnamon/applets/CinnVIIStarkMenu@NikoKrause /home/$i/.config/.local/share/cinnamon/applets/
+		dconf load /org/cinnamon/ < $config/dconf.org.cinnamon
+	fi
 	#autostart
 	sudo mkdir -p /home/$i/.config/autostart/
 	sudo mv -f $config/.config/autostart/* /home/$i/.config/autostart/*
